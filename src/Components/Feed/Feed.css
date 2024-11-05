@@ -1,29 +1,100 @@
-.feed{
+/* General Feed Container */
+.feed {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns based on container width */
     grid-column-gap: 16px;
     grid-row-gap: 30px;
     margin-top: 15px;
 }
 
-.card img{
-    width: 100%;
+/* Card Image Styling */
+.card img {
+    width: 100%; /* Ensure the image takes the full width of its container */
     border-radius: 5px;
 }
-.card h2{
+
+/* Card Title Styling */
+.card h2 {
     font-size: 16px;
     font-weight: 600;
     color: #000;
     margin: 5px;
-
 }
-.card h3{
+
+/* Card Subtitle Styling */
+.card h3 {
     font-size: 14px;
     font-weight: 600;
     color: #555;
     margin: 6px 0;
 }
-.card p{
+
+/* Card Paragraph Styling */
+.card p {
     font-size: 14px;
-    
+}
+
+/* Responsive Design: Mobile First */
+
+/* Mobile (small screens) */
+@media (max-width: 600px) {
+    .feed {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+        grid-column-gap: 8px; /* Reduce the gap on smaller screens */
+        grid-row-gap: 20px; /* Reduce the gap between rows */
+    }
+
+    .card h2 {
+        font-size: 14px; /* Slightly smaller title font size for small screens */
+    }
+
+    .card h3 {
+        font-size: 12px; /* Slightly smaller subtitle font size for small screens */
+    }
+
+    .card p {
+        font-size: 12px; /* Smaller paragraph font size */
+    }
+}
+
+/* Tablet (medium screens) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .feed {
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for tablets */
+        grid-column-gap: 12px;
+        grid-row-gap: 25px;
+    }
+
+    .card h2 {
+        font-size: 15px; /* Adjust title font size for tablets */
+    }
+
+    .card h3 {
+        font-size: 13px; /* Adjust subtitle font size for tablets */
+    }
+
+    .card p {
+        font-size: 13px; /* Adjust paragraph font size for tablets */
+    }
+}
+
+/* Desktop (large screens) */
+@media (min-width: 1025px) {
+    .feed {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns based on the container width */
+        grid-column-gap: 16px;
+        grid-row-gap: 30px;
+    }
+
+    .card h2 {
+        font-size: 16px; /* Regular title font size for desktop */
+    }
+
+    .card h3 {
+        font-size: 14px; /* Regular subtitle font size for desktop */
+    }
+
+    .card p {
+        font-size: 14px; /* Regular paragraph font size for desktop */
+    }
 }

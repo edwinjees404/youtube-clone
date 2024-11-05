@@ -1,22 +1,107 @@
-.recommended{
-    flex-basis: 30%;
+/* Recommended Section */
+.recommended {
+    flex-basis: 30%; /* Take 30% of the container width by default */
+    margin-bottom: 20px; /* Add some margin for spacing */
 }
-.side-video-list{
+
+/* Side Video List */
+.side-video-list {
     display: flex;
     justify-content: space-between;
-    
     margin-bottom: 8px;
+    flex-wrap: wrap; /* Ensure the content wraps on smaller screens */
+}
 
+/* Side Video List Image */
+.side-video-list img {
+    flex-basis: 49%; /* Take 49% of the container width */
+    width: 100%; /* Ensure image scales responsively */
+    margin-bottom: 5px; /* Add space between images */
 }
-.side-video-list img{
-    flex-basis: 49%;
-    width: 50%;
 
+/* Video Info Section */
+.vid-info {
+    flex-basis: 49%; /* Take 49% of the container width */
 }
-.vid-info{
-    flex-basis: 49%;
-}
-.vid-info h4{
+
+.vid-info h4 {
     font-size: 13px;
     margin-bottom: 5px;
+    color: #333; /* Ensure text has a readable color */
+}
+
+/* Responsive Design */
+
+/* Mobile (Small Devices) */
+@media (max-width: 600px) {
+    .recommended {
+        flex-basis: 100%; /* On mobile, take full width */
+        margin-bottom: 15px;
+    }
+
+    .side-video-list {
+        flex-direction: column; /* Stack the side video list vertically */
+        justify-content: flex-start; /* Align the items to the top */
+    }
+
+    .side-video-list img {
+        flex-basis: 100%; /* Make images take full width on mobile */
+        margin-bottom: 10px; /* Add more space between images */
+    }
+
+    .vid-info {
+        flex-basis: 100%; /* Video info takes full width on mobile */
+    }
+
+    .vid-info h4 {
+        font-size: 12px; /* Slightly smaller font size on mobile */
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .recommended {
+        flex-basis: 50%; /* Take 50% of the container width on tablets */
+    }
+
+    .side-video-list {
+        flex-direction: row;
+        justify-content: space-between; /* Keep items in row */
+    }
+
+    .side-video-list img {
+        flex-basis: 48%; /* Reduce the image size to fit side by side */
+    }
+
+    .vid-info {
+        flex-basis: 48%; /* Make video info take 48% of the container */
+    }
+
+    .vid-info h4 {
+        font-size: 13px;
+    }
+}
+
+/* Desktop (Large Devices) */
+@media (min-width: 1025px) {
+    .recommended {
+        flex-basis: 30%; /* Maintain 30% width on larger screens */
+    }
+
+    .side-video-list {
+        flex-direction: row;
+        justify-content: space-between; /* Keep the layout in a row */
+    }
+
+    .side-video-list img {
+        flex-basis: 49%; /* Ensure images take up 49% of the space */
+    }
+
+    .vid-info {
+        flex-basis: 49%; /* Keep video info taking up 49% */
+    }
+
+    .vid-info h4 {
+        font-size: 13px;
+    }
 }

@@ -1,46 +1,96 @@
-nav{
+/* General Navigation Styles */
+nav {
     padding: 10px 2%;
+    display: flex;
     justify-content: space-between;
-    box-shadow: 0 0 10px rgba (0,0, 0, 0.5);
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fixed syntax error in rgba */
     background: #fff;
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 10;
-
 }
-.nav-left .menu-icon{
-    width: 22px ;
+
+/* Navigation Left Section */
+.nav-left .menu-icon {
+    width: 22px;
     margin-right: 25px;
-
-
 }
-.nav-left .logo{
+
+.nav-left .logo {
     width: 30px;
-    margin-left: 0px;
+    margin-left: 0;
 }
-.nav-middle .search-box{
-  border: 1px solid #ccc;
-  margin-right: 5px;
-  padding: 8px;
-  border-radius: 25px;  
+
+/* Navigation Middle Section (Search Box) */
+.nav-middle .search-box {
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    padding: 8px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center; /* Ensure the icon and input are aligned */
 }
-.nav-middle .search-box input{
-    width:400px ;
+
+.nav-middle .search-box input {
+    width: 100%; /* Make input flexible */
+    max-width: 400px; /* Limit the maximum width */
     border: 0;
     outline: 0;
     background: transparent;
-    margin-right: 0px;
+    margin-right: 10px; /* Space between input and icon */
+    font-size: 14px;
+}
 
+.nav-middle .search-box img {
+    width: 18px; /* Adjust icon size */
 }
-.nav-middle .search-box img{
-    width: 5px;
-    
-}
-.nav-right img{
+
+/* Navigation Right Section */
+.nav-right img {
     width: 25px;
-     margin-right: 25px;
+    margin-right: 25px;
 }
-.nav-right .user-icon{
-    width: 15px;
+
+.nav-right .user-icon {
+    width: 25px; /* Consistent size for user icon */
+    height: 25px;
     border-radius: 50%;
+    object-fit: cover; /* Ensure the image is contained within the circle */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Stack elements in a column for smaller screens */
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left on small screens */
+        padding: 10px;
+    }
+
+    .nav-left {
+        margin-bottom: 10px; /* Add space between left and middle sections */
+    }
+
+    .nav-middle .search-box input {
+        width: 100%; /* Ensure the search box input is full width */
+        max-width: 100%; /* Remove the 400px limit on small screens */
+    }
+
+    .nav-right {
+        margin-top: 10px; /* Space between right icons and the rest of the nav */
+    }
+}
+
+/* Tablet and larger (min-width: 768px) */
+@media (min-width: 768px) {
+    /* Keep navigation aligned horizontally for tablets and larger screens */
+    nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-middle .search-box input {
+        width: 400px; /* Allow search box input to take up more space on larger screens */
+    }
 }

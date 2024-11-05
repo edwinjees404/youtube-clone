@@ -1,18 +1,67 @@
-*{
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-a{
-    text-decoration: none;
-    color: #5a5a5a;
 
+/* Link Styles */
+a {
+    text-decoration: none;  /* Removes underline from links */
+    color: #5a5a5a;  /* Sets text color */
 }
-img{
-    cursor:pointer
+
+/* Image Styling */
+img {
+    cursor: pointer;  /* Makes images clickable */
+    max-width: 100%;  /* Ensures images are responsive and scale down within their containers */
+    height: auto;  /* Maintains aspect ratio of images */
 }
-.flex-div{
+
+/* Flexbox Layout for .flex-div */
+.flex-div {
     display: flex;
-    align-items: center;
+    align-items: center;  /* Vertically centers items */
+    justify-content: flex-start;  /* Default: left align items */
+    flex-wrap: wrap;  /* Allows items to wrap onto the next line on small screens */
+}
+
+/* Mobile (Small Devices) */
+@media (max-width: 600px) {
+    .flex-div {
+        justify-content: center;  /* Center items on small screens */
+        padding: 10px;  /* Adds some padding around the container */
+    }
+
+    /* Adjust link text color for better contrast */
+    a {
+        color: #333;  /* Darker color for readability on small screens */
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .flex-div {
+        justify-content: space-between;  /* Spreads out items on tablets */
+        padding: 15px;  /* Adds padding for better spacing */
+    }
+
+    /* Adjust link text color for better contrast */
+    a {
+        color: #555;  /* Slightly lighter color for readability on tablets */
+    }
+}
+
+/* Desktop (Large Devices) */
+@media (min-width: 1025px) {
+    .flex-div {
+        justify-content: space-between;  /* Spreads out items with even space on large screens */
+        padding: 20px;  /* Adds extra padding for large screens */
+    }
+
+    /* Links can have default color on larger screens */
+    a {
+        color: #5a5a5a;  /* Default color */
+    }
 }

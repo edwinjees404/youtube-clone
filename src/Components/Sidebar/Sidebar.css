@@ -1,18 +1,24 @@
-.sidebar
-{
+/* Sidebar Styles */
+.sidebar {
     background: #fff;
-    width: 15%;
+    width: 15%; /* Sidebar width for large screens */
     height: 100vh;
-    position:fixed;
+    position: fixed;
     top: 0;
+    left: 0;
     padding-left: 2%;
     padding-top: 80px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
-.shortcut-links img{
-    width: 20px;
+
+/* Shortcut Links */
+.shortcut-links img {
+    width: 20px; /* Icon size */
     margin-right: 20px;
 }
-.side-links{
+
+/* Side Links */
+.side-links {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -20,22 +26,99 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
-.sidebar hr{
+
+/* Sidebar Divider (hr) */
+.sidebar hr {
     border: 0;
     height: 1px;
     background: #ccc;
-    width: 85%;
+    width: 85%; /* Set width to 85% of sidebar for better spacing */
 }
-.subscribed-list h3{
 
-font-size: 13px;
-margin: 20px 0;
-color: #5a5a5a;
-
+/* Subscribed List */
+.subscribed-list h3 {
+    font-size: 13px;
+    margin: 20px 0;
+    color: #5a5a5a;
 }
-.subscribed-list img{
+
+.subscribed-list img {
     width: 25px;
     border-radius: 50%;
     margin-right: 20px;
+}
 
+/* Mobile Responsiveness (max-width: 600px) */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+        padding-top: 10px; /* Reduce top padding for mobile */
+    }
+
+    .shortcut-links img {
+        width: 16px; /* Reduce icon size */
+        margin-right: 10px; /* Adjust spacing for mobile */
+    }
+
+    .subscribed-list h3 {
+        font-size: 12px; /* Slightly smaller font for mobile */
+    }
+
+    .subscribed-list img {
+        width: 20px; /* Adjust image size */
+        margin-right: 10px; /* Adjust spacing */
+    }
+
+    /* Optional: If you want the sidebar to collapse on mobile */
+    .sidebar {
+        position: absolute; /* Allow it to collapse or slide in */
+        left: -100%; /* Hide it off-screen by default */
+        transition: 0.3s ease; /* Smooth transition */
+    }
+
+    .sidebar.open {
+        left: 0; /* When 'open' class is added, the sidebar will slide in */
+    }
+}
+
+/* Tablet Responsiveness (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .sidebar {
+        width: 25%; /* Adjust width for tablets */
+    }
+
+    .shortcut-links img {
+        width: 18px; /* Slightly smaller icon on tablets */
+        margin-right: 15px; /* Adjust spacing */
+    }
+
+    .subscribed-list h3 {
+        font-size: 12px; /* Smaller font for tablets */
+    }
+
+    .subscribed-list img {
+        width: 22px; /* Slightly smaller image on tablets */
+        margin-right: 15px; /* Adjust spacing */
+    }
+}
+
+/* Desktop Responsiveness (1025px and up) */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 15%; /* Default sidebar width for large screens */
+    }
+
+    .shortcut-links img {
+        width: 20px; /* Default icon size */
+        margin-right: 20px; /* Default spacing */
+    }
+
+    .subscribed-list h3 {
+        font-size: 13px; /* Regular font size */
+    }
+
+    .subscribed-list img {
+        width: 25px; /* Default image size */
+        margin-right: 20px; /* Default spacing */
+    }
 }

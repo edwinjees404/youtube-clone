@@ -1,7 +1,38 @@
-.feed-container{
+/* Default Styles for Feed Container */
+.feed-container {
     background: #f9f9f9;
-    padding-left: 17%;
-    padding-right: 2%;
+    padding-left: 17%; /* Large padding on the left for larger screens */
+    padding-right: 2%; /* Small padding on the right */
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+/* Mobile (Small Devices) */
+@media (max-width: 600px) {
+    .feed-container {
+        padding-left: 5%; /* Reduce left padding for mobile screens */
+        padding-right: 5%; /* Add a little padding on the right for mobile screens */
+        padding-top: 15px; /* Reduce top padding for smaller screens */
+        padding-bottom: 15px; /* Reduce bottom padding for smaller screens */
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .feed-container {
+        padding-left: 10%; /* Reduce left padding for tablets */
+        padding-right: 5%; /* Increase right padding slightly for better balance */
+        padding-top: 18px; /* Slightly smaller top padding */
+        padding-bottom: 18px; /* Slightly smaller bottom padding */
+    }
+}
+
+/* Desktop (Large Devices) */
+@media (min-width: 1025px) {
+    .feed-container {
+        padding-left: 17%; /* Maintain left padding for large screens */
+        padding-right: 2%; /* Keep right padding small for large screens */
+        padding-top: 20px; /* Maintain top padding for large screens */
+        padding-bottom: 20px; /* Maintain bottom padding for large screens */
+    }
 }

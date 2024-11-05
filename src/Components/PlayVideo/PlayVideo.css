@@ -1,15 +1,22 @@
-.play-video{
-    flex: basis 111%;
+/* General Play Video Section */
+.play-video {
+    flex: 1 1 100%; /* Allow the section to take up 100% of the container */
+    margin-bottom: 20px;
 }
-.play-video video{
-    width: 140vh;
+
+.play-video video {
+    width: 100%; /* Make the video responsive */
+    max-width: 140vh; /* Ensure the video doesn't stretch too wide */
 }
-.play-video h3{
+
+.play-video h3 {
     margin-top: 10px;
     font-weight: 600;
     font-size: 22px;
 }
-.play-video-info{
+
+/* Play Video Information Section */
+.play-video-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,108 +25,277 @@
     font-size: 14px;
     color: #5a5a5a;
 }
-.play-video-info img{
+
+.play-video-info img {
     width: 20px;
     margin-right: 8px;
 }
-.play-video-info span{
+
+.play-video-info span {
     display: inline-flex;
     align-items: center;
     margin-left: 15px;
-
 }
-.play-video hr{
 
+.play-video hr {
     border: 0;
     height: 1px;
     background: #ccc;
     margin: 10px 0;
 }
-.publisher{
+
+/* Publisher Section */
+.publisher {
     display: flex;
     align-items: center;
     margin-top: 20px;
+}
 
+.publisher div {
+    flex: 1;
+    line-height: 18px;
 }
-.publisher div{
-   flex: 1;
-   line-height: 18px; 
+
+.publisher img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
 }
-.publisher img{
-    width:40px;
-border-radius: 50%;
-margin-right: 15px;
-}
-.publisher div p{
+
+.publisher div p {
     color: black;
     font-weight: 600;
-font-size: 18px;
+    font-size: 18px;
 }
-.publisher div span{
+
+.publisher div span {
     font-size: 13px;
     color: #5a5a5a;
 }
-.publisher button{
+
+.publisher button {
     background: red;
     color: #fff;
     padding: 8px 30px;
     border: 0;
     outline: 0;
     border-radius: 4px;
-cursor: pointer;
+    cursor: pointer;
 }
-.vid-description{
+
+/* Video Description Section */
+.vid-description {
     padding-left: 55px;
     margin: 15px;
 }
-.vid-description p{
+
+.vid-description p {
     font-size: 14px;
     margin-bottom: 5px;
     color: #5a5a5a;
 }
-.vid-description h4{
-    font-size:14px ;
+
+.vid-description h4 {
+    font-size: 14px;
     color: #5a5a5a;
     margin-top: 15px;
-
 }
-.comment{
+
+/* Comment Section */
+.comment {
     display: flex;
     align-items: flex-start;
     margin: 20px 0;
 }
-.comment img{
+
+.comment img {
     width: 35px;
     border-radius: 50%;
     margin-right: 15px;
-
-
 }
-.comment h3{
+
+.comment h3 {
     font-size: 14px;
     margin-bottom: 2px;
-
 }
-.comment h3 span{
+
+.comment h3 span {
     font-size: 12px;
     color: #5a5a5a;
     font-weight: 500;
     margin-left: 8px;
 }
-.comment-action{
+
+/* Comment Action Section */
+.comment-action {
     display: flex;
     align-items: center;
     margin: 8px 0;
     font-size: 14px;
-
-
 }
-.comment-action img{
+
+.comment-action img {
     border-radius: 0;
     width: 20px;
     margin-right: 5px;
 }
-.comment-action span{
+
+.comment-action span {
     margin-right: 20px;
     color: #5a5a5a;
+}
+
+/* Responsive Design */
+
+/* Mobile (Small Devices) */
+@media (max-width: 600px) {
+    .play-video {
+        flex: 1 1 100%; /* Ensure the video section takes full width on mobile */
+    }
+
+    .play-video video {
+        width: 100%; /* Ensure video resizes appropriately */
+        max-width: 100%; /* Remove the max-width restriction */
+    }
+
+    .play-video h3 {
+        font-size: 18px; /* Adjust title font size for small screens */
+    }
+
+    .play-video-info {
+        flex-direction: column; /* Stack info vertically on small screens */
+        text-align: center; /* Center the text */
+    }
+
+    .publisher {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    .publisher img {
+        width: 35px; /* Reduce image size on small screens */
+        margin-bottom: 10px;
+    }
+
+    .publisher button {
+        width: 100%; /* Make the button full-width */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .vid-description {
+        padding-left: 10px; /* Reduce padding on mobile */
+        margin: 10px 0;
+    }
+
+    .comment {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 15px 0;
+    }
+
+    .comment img {
+        width: 30px; /* Adjust image size for mobile */
+        margin-right: 10px;
+    }
+
+    .comment h3 {
+        font-size: 13px;
+    }
+
+    .comment h3 span {
+        font-size: 11px;
+    }
+
+    .comment-action {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 12px;
+    }
+
+    .comment-action span {
+        margin-right: 10px;
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .play-video {
+        flex: 1 1 100%;
+    }
+
+    .play-video video {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .play-video h3 {
+        font-size: 20px; /* Adjust title font size for tablets */
+    }
+
+    .play-video-info {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .publisher {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .publisher img {
+        width: 40px;
+    }
+
+    .publisher button {
+        width: auto;
+        margin-left: 20px;
+    }
+
+    .vid-description {
+        padding-left: 30px;
+    }
+
+    .comment-action {
+        font-size: 13px;
+    }
+}
+
+/* Desktop (Large Devices) */
+@media (min-width: 1025px) {
+    .play-video {
+        flex: 1 1 50%; /* Video section takes 50% of the width on large screens */
+    }
+
+    .play-video video {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .play-video h3 {
+        font-size: 22px;
+    }
+
+    .play-video-info {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .publisher {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .publisher button {
+        width: auto;
+    }
+
+    .vid-description {
+        padding-left: 55px;
+    }
+
+    .comment-action {
+        font-size: 14px;
+    }
 }

@@ -1,11 +1,45 @@
-.play-container{
+/* Default Styles for Play Container */
+.play-container {
     background: #f9f9f9;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+    padding-left: 2%; /* Left padding */
+    padding-right: 2%; /* Right padding */
+    padding-top: 20px; /* Top padding */
+    padding-bottom: 20px; /* Bottom padding */
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; /* Distribute space between items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    width: 100%; /* Full width */
+}
+
+/* Mobile (Small Devices) */
+@media (max-width: 600px) {
+    .play-container {
+        padding-left: 5%; /* Increase left padding on small screens */
+        padding-right: 5%; /* Increase right padding on small screens */
+        padding-top: 15px; /* Reduce top padding */
+        padding-bottom: 15px; /* Reduce bottom padding */
+        justify-content: center; /* Center content on small screens */
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .play-container {
+        padding-left: 5%; /* Add a little more padding on tablets */
+        padding-right: 5%; /* Add a little more padding on tablets */
+        padding-top: 18px; /* Slightly smaller top padding for tablets */
+        padding-bottom: 18px; /* Slightly smaller bottom padding for tablets */
+        justify-content: space-between; /* Space out content on tablets */
+    }
+}
+
+/* Desktop (Large Devices) */
+@media (min-width: 1025px) {
+    .play-container {
+        padding-left: 2%; /* Keep left padding on larger screens */
+        padding-right: 2%; /* Keep right padding on larger screens */
+        padding-top: 20px; /* Maintain top padding */
+        padding-bottom: 20px; /* Maintain bottom padding */
+        justify-content: space-between; /* Maintain space between items */
+    }
 }
